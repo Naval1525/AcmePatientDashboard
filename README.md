@@ -4,8 +4,8 @@ A minimalist patient dashboard for tracking weight loss progress and medication 
 
 ## Project Structure
 
-- `/prisma` - Database schema and migrations
-- `/src` - Backend server code (Express.js)
+- `/backendd/prisma` - Database schema and migrations
+- `/backend` - Backend server code (Express.js)
 - `/client` - Frontend React application
 
 ## Setup Instructions
@@ -62,17 +62,12 @@ The server will start on http://localhost:5000
    npm install
    ```
 
-3. Create a `.env` file in the client directory with the following content:
-   ```
-   REACT_APP_API_URL=http://localhost:5000/api
-   ```
-
-4. Start the development server:
+3. Start the development server:
    ```
    npm start
    ```
 
-The client will start on http://localhost:3000
+The client will start on http://localhost:5173
 
 ### Test User
 
