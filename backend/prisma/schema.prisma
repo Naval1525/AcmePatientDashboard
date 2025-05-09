@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String     @id @default(uuid())
+  email         String     @unique
+  passwordHash  String
+  firstName     String
+  lastName      String
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  weights       Weight[]
+  shipments     Shipment[]
+  targetWeight  Float?
+  height        Float?     // Height in cm
+}
+
+model Weight {
+  id        String   @id @default(uuid())
+  weight    Float    // Weight in kg
+  date      DateTime @default(now())
+  notes     String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Shipment {
+  id              String   @id @default(uuid())
+  status          String   // "processing", "shipped", "delivered"
+  trackingNumber  String?
+  expectedDate    DateTime
+  deliveredDate   DateTime?
+  medicationType  String
+  dosage          String
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
