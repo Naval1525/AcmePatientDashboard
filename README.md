@@ -15,16 +15,16 @@ A minimalist patient dashboard for tracking weight loss progress and medication 
 - Node.js v16+ and npm
 - Neon PostgreSQL database (or any PostgreSQL database)
 
-### Backend Setup
+### Setup
 
 1. Clone the repository
 
-2. Install dependencies:
+2. Install dependencies in Backend and Frontend:
    ```
    npm install
    ```
 
-3. Create a `.env` file in the root directory (use the provided `.env.example` as a template)
+3. Create a `.env` file in the root directory of backend (use the provided `.env.example` as a template)
 
 4. Set up your Neon PostgreSQL database and update the `DATABASE_URL` in the `.env` file
 
@@ -64,7 +64,7 @@ The server will start on http://localhost:5000
 
 3. Start the development server:
    ```
-   npm start
+   npm run dev
    ```
 
 The client will start on http://localhost:5173
