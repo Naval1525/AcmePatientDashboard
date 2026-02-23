@@ -1,3 +1,4 @@
+
 // src/controllers/authController.js
 const bcrypt = require('bcryptjs');
 const prisma = require('../models');
