@@ -8,6 +8,8 @@ const { generateToken } = require('../utils/jwt');
  * Register a new user
  */
 
+
+
 const register = async (req, res) => {
   try {
     const { email, password, firstName, lastName, height, targetWeight } = req.body;
