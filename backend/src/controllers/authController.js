@@ -10,6 +10,7 @@ const register = async (req, res) => {
   try {
     const { email, password, firstName, lastName, height, targetWeight } = req.body;
 
+    
     // Check if user already exists
     const existingUser = await prisma.user.findUnique({
       where: { email }
